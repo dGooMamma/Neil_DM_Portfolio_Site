@@ -1,0 +1,62 @@
+
+// =========================================
+// VARIABLES
+//==========================================
+
+$primary-color: #22553F;
+$secondary-color: #ecc768;
+$heading-font: 'Rubik', sans-serif;
+$body-font: 'Spectral', serif;
+
+
+/* =========================================
+BASE styles
+========================================== */
+
+* {
+  box-sizing:border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $heading-font;
+}
+
+p {
+  font-family: $body-font;
+}
+
+a {
+  text-decoration: none;
+  margin-top:0;
+  &:link,
+  &:visited {
+    color:$primary-color;
+  }
+}
+
+.nav-heading {
+  color: $primary-color;
+  margin-top:0;
+}
+
+.banner-heading {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.banner-title {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 5em;
+}
+
+.banner-subtitle {
+  font-weight: 300;
+  letter-spacing: .12em;
+  font-size:1.515em;
+}
+
+/* Pseudo-Classes */
