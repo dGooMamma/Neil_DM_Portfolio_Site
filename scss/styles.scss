@@ -18,6 +18,10 @@ $white: #F1F7ED;
 $heading-font: 'Rubik', sans-serif;
 $body-font: 'Spectral', serif;
 
+// =========================================
+// MIXINS
+//==========================================
+
 @mixin center {
   width: 90%;
   margin:0 auto;
@@ -79,7 +83,7 @@ nav {
           color: $primary-color;
           &:active {
             background-color: $secondary-color;
-            color: $white;  
+            color: $white;
           }
         }
       }
@@ -100,6 +104,10 @@ footer {
   margin:0;
   text-align: center;
 }
+
+/* =========================================
+CLASS styles
+========================================== */
 
 .nav-heading {
   margin-top:0;
