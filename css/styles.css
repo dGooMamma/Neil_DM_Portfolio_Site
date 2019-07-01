@@ -1,8 +1,14 @@
+/* COLORS */
+/* FONTS */
 /* =========================================
 BASE styles
 ========================================== */
 * {
   box-sizing: border-box; }
+
+body {
+  background-color: #F1F7ED;
+  margin-top: 0; }
 
 h1,
 h2,
@@ -16,27 +22,74 @@ a {
   text-decoration: none;
   margin-top: 0; }
   a:link, a:visited {
-    color: #22553F; }
+    color: #F1F7ED; }
 
-.nav-heading {
-  color: #22553F;
+nav {
+  margin-top: 0;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  nav ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase; }
+    nav ul li {
+      text-align: center; }
+      nav ul li a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+        letter-spacing: .22rem;
+        font-size: 1.3rem; }
+        nav ul li a:hover {
+          background-color: #F1F7ED;
+          color: #22553F; }
+          nav ul li a:hover:active {
+            background-color: #ffe36a;
+            color: #F1F7ED; }
+
+header {
+  background-color: #22553F;
   margin-top: 0; }
 
-.banner-heading {
+footer {
   background-color: #22553F;
-  color: #fff;
-  padding: 50px 0; }
+  color: #F1F7ED;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: 0;
+  text-align: center; }
+
+.nav-heading {
+  margin-top: 0;
+  display: none; }
+
+.banner-heading {
+  background-color: #ffe36a;
+  color: #22553F;
+  padding: 50px 0;
+  margin: 0 auto;
+  text-align: center; }
 
 .banner-title {
   text-transform: uppercase;
   letter-spacing: .12em;
-  font-size: 5em; }
+  font-size: 4em;
+  width: 90%;
+  margin: 0 auto; }
 
 .banner-subtitle {
   font-weight: 300;
   letter-spacing: .12em;
-  font-size: 1.515em; }
+  font-size: 1.515em;
+  width: 90%;
+  margin: 0 auto; }
+
+.wrapper {
+  min-height: calc(100vh - 18px); }
 
 /* Pseudo-Classes */
+/* MEDIA QUERIES */
 
 /*# sourceMappingURL=styles.css.map */

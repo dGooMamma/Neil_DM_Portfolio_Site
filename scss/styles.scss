@@ -3,10 +3,25 @@
 // VARIABLES
 //==========================================
 
+/* COLORS */
+
 $primary-color: #22553F;
-$secondary-color: #ecc768;
+$primary-color-dark: darken($primary-color, 50%);
+$primary-color-light: lighten($primary-color, 50%);
+
+$secondary-color: #ffe36a;
+
+$white: #F1F7ED;
+
+/* FONTS */
+
 $heading-font: 'Rubik', sans-serif;
 $body-font: 'Spectral', serif;
+
+@mixin center {
+  width: 90%;
+  margin:0 auto;
+}
 
 
 /* =========================================
@@ -15,6 +30,11 @@ BASE styles
 
 * {
   box-sizing:border-box;
+}
+
+body {
+  background-color: $white;
+  margin-top:0;
 }
 
 h1,
@@ -32,31 +52,90 @@ a {
   margin-top:0;
   &:link,
   &:visited {
-    color:$primary-color;
+    color: $white;
   }
 }
 
-.nav-heading {
-  color: $primary-color;
+nav {
+  margin-top: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left:0;
+    font-family: $heading-font;
+    text-transform: uppercase;
+    li {
+      text-align: center;
+      a {
+        padding-top:10px;
+        padding-bottom:10px;
+        display: block;
+        letter-spacing: .22rem;
+        font-size: 1.3rem;
+        &:hover {
+          background-color: $white;
+          color: $primary-color;
+          &:active {
+            background-color: $secondary-color;
+            color: $white;  
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  background-color: $primary-color;
   margin-top:0;
 }
 
-.banner-heading {
+footer {
   background-color: $primary-color;
-  color: #fff;
+  color: #F1F7ED;
+  padding-top:25px;
+  padding-bottom:25px;
+  margin:0;
+  text-align: center;
+}
+
+.nav-heading {
+  margin-top:0;
+  display:none;
+}
+
+.banner-heading {
+  background-color: #ffe36a;
+  color: $primary-color;
   padding: 50px 0;
+  margin:0 auto;
+  text-align: center;
 }
 
 .banner-title {
   text-transform: uppercase;
   letter-spacing: .12em;
-  font-size: 5em;
+  font-size: 4em;
+  @include center;
 }
 
 .banner-subtitle {
   font-weight: 300;
   letter-spacing: .12em;
   font-size:1.515em;
+  @include center;
+}
+
+.wrapper {
+  min-height: calc(100vh - 18px);
 }
 
 /* Pseudo-Classes */
+
+/* MEDIA QUERIES */
+
+// @media (min-width:) {
+//
+// }
