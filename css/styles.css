@@ -90,7 +90,46 @@ CLASS styles
   margin: 0 auto; }
 
 .wrapper {
-  min-height: calc(100vh - 18px); }
+  min-height: calc(100vh - 18px);
+  background-color: #ffe36a; }
+
+.dice-container {
+  background: #22553F;
+  padding-top: 25px;
+  padding-bottom: 25px; }
+  .dice-container .dice-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 950px; }
+    .dice-container .dice-wrap .die {
+      flex-grow: 1;
+      flex-basis: 0px;
+      max-width: 100px;
+      width: 50px;
+      padding: 5px 15px; }
+
+.intro {
+  width: 90%;
+  max-width: 685px;
+  text-align: left;
+  margin: 0 auto;
+  color: #22553F;
+  font-size: 1.4em;
+  line-height: 1.2; }
+  .intro p::first-letter {
+    float: left;
+    font-size: 80px;
+    color: #ffe36a;
+    padding: 5px 10px;
+    background: #22553F;
+    margin: 10px 10px 0 0;
+    border-radius: 5px;
+    line-height: 1; }
 
 /* Pseudo-Classes */
 /* MEDIA QUERIES */
