@@ -4,54 +4,72 @@
 BASE styles
 ========================================== */
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body {
   background-color: #ffe36a;
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 h1,
 h2,
 h3 {
-  font-family: "Rubik", sans-serif; }
+  font-family: "Rubik", sans-serif;
+}
+
+h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
 
 p {
-  font-family: "Spectral", serif; }
+  font-family: "Spectral", serif;
+}
 
 a {
   text-decoration: none;
-  margin-top: 0; }
-  a:link, a:visited {
-    color: #F1F7ED; }
+  margin-top: 0;
+}
+a:link, a:visited {
+  color: #F1F7ED;
+}
 
 nav {
   margin-top: 0;
   padding-top: 15px;
-  padding-bottom: 15px; }
-  nav ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-    font-family: "Rubik", sans-serif;
-    text-transform: uppercase; }
-    nav ul li {
-      text-align: center; }
-      nav ul li a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        display: block;
-        letter-spacing: .22rem;
-        font-size: 1.3rem; }
-        nav ul li a:hover {
-          background-color: #F1F7ED;
-          color: #22553F; }
-          nav ul li a:hover:active {
-            background-color: #ffe36a;
-            color: #F1F7ED; }
+  padding-bottom: 15px;
+}
+nav ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+}
+nav ul li {
+  text-align: center;
+}
+nav ul li a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  letter-spacing: 0.22rem;
+  font-size: 1.3rem;
+}
+nav ul li a:hover {
+  background-color: #F1F7ED;
+  color: #22553F;
+}
+nav ul li a:hover:active {
+  background-color: #ffe36a;
+  color: #F1F7ED;
+}
 
 header {
   background-color: #22553F;
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 footer {
   background-color: #22553F;
@@ -59,66 +77,77 @@ footer {
   padding-top: 25px;
   padding-bottom: 25px;
   margin: 0;
-  text-align: center; }
+  text-align: center;
+}
 
 /* =========================================
 CLASS styles
 ========================================== */
 .nav-heading {
   margin-top: 0;
-  display: none; }
+  display: none;
+}
 
 .banner-heading {
   background-color: #ffe36a;
   color: #22553F;
   padding: 50px 0;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+}
 
 .banner-title {
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   font-size: 4em;
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .banner-subtitle {
   font-weight: 300;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   font-size: 1.515em;
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .wrapper {
-  min-height: calc(100vh - 18px); }
+  min-height: calc(100vh - 18px);
+}
 
 .dice-container {
   background: #22553F;
   padding-top: 25px;
-  padding-bottom: 25px; }
-  .dice-container .dice-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: 0 auto;
-    align-items: center;
-    max-width: 950px;
-    min-width: 320px; }
-    .dice-container .dice-wrap .die {
-      flex-grow: 1;
-      flex-basis: 0px;
-      max-width: 100px;
-      width: 50px;
-      padding: 5px 15px; }
+  padding-bottom: 25px;
+}
+.dice-container .dice-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  max-width: 950px;
+  min-width: 320px;
+}
+.dice-container .dice-wrap .die {
+  flex-grow: 1;
+  flex-basis: 0px;
+  max-width: 100px;
+  width: 50px;
+  padding: 5px 15px;
+}
 
 .d-spin {
   transition: transform 1s ease-in-out;
-  transform: rotate(0turn); }
+  transform: rotate(0turn);
+}
 
 .d-spin:hover {
-  transform: rotate(1turn); }
+  transform: rotate(1turn);
+}
 
 .intro {
   width: 90%;
@@ -127,16 +156,25 @@ CLASS styles
   margin: 0 auto;
   color: #22553F;
   font-size: 1.4em;
-  line-height: 1.2; }
-  .intro p::first-letter {
-    float: left;
-    font-size: 80px;
-    color: #ffe36a;
-    padding: 5px 10px;
-    background: #22553F;
-    margin: 10px 10px 0 0;
-    border-radius: 5px;
-    line-height: 1; }
+  line-height: 1.2;
+}
+.intro p::first-letter {
+  float: left;
+  font-size: 80px;
+  color: #ffe36a;
+  padding: 5px 10px;
+  background: #22553F;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.service-container {
+  background-color: #22553F;
+  color: #ffe36a;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 /* Pseudo-Classes */
 /* MEDIA QUERIES */
