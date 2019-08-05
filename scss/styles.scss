@@ -264,6 +264,12 @@ CLASS styles
   }
 }
 
+.heading-in-person-lrg,
+.heading-online-lrg,
+.heading-xp-lvl-lrg {
+  display: inline;
+}
+
 .top-link {
   text-align:center;
   margin:0 auto;
@@ -386,23 +392,39 @@ CLASS styles
     padding-top: 50px;
   }
 
-  .heading-in-person {
-    position: absolute;
-    top: -30px;
-    left: 40px;
-  }
+  // .heading-in-person {
+  //   position: absolute;
+  //   top: -30px;
+  //   left: 40px;
+  // }
+  //
+  // .heading-online {
+  //   position:absolute;
+  //   top:-30px;
+  //   left: 455px;
+  // }
+  //
+  // .heading-xp-lvl {
+  //   position:absolute;
+  //   top: -30px;
+  //   right: 40px;
+  // }
 
-  .heading-online {
-    position:absolute;
-    top:-30px;
-    left: 455px;
-  }
-
+  .heading-in-person,
+  .heading-online,
   .heading-xp-lvl {
-    position:absolute;
-    top: -30px;
-    right: 40px;
+    display: none;
   }
+
+  .heading-in-person-lrg,
+  .heading-online-lrg,
+  .heading-xp-lvl-lrg {
+    display: inline;
+    order: -2;
+  }
+
+
+
 
   .in-person,
   .online,
