@@ -6,10 +6,11 @@
 /* COLORS */
 
 $primary-color: #22553F;
-$primary-color-dark: darken($primary-color, 50%);
-$primary-color-light: lighten($primary-color, 50%);
+$primary-color-dark: darken($primary-color, 7%);
+$primary-color-light: lighten($primary-color, 4%);
 
 $secondary-color: #ffe36a;
+$secondary-color-dark: darken($secondary-color, 2%);
 
 $white: #F1F7ED;
 
@@ -27,6 +28,14 @@ $body-font: 'Spectral', serif;
   margin:0 auto;
 }
 
+// =========================================
+// FUNCTIONS
+//==========================================
+
+@function pc-to-px($target, $context) {
+  @return ($target * .01) * $context;
+}
+
 
 /* =========================================
 BASE styles
@@ -37,7 +46,7 @@ BASE styles
 }
 
 body {
-  background-color: $secondary-color;
+  background-color: $primary-color;
   margin-top:0;
 }
 
@@ -51,6 +60,7 @@ h3 {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 1.8em;
+  color: $secondary-color;
 }
 
 p {
@@ -70,6 +80,11 @@ nav {
   margin-top: 0;
   padding-top: 15px;
   padding-bottom: 15px;
+  position: fixed;
+  width:100%;
+  background-color: $primary-color;
+  border-bottom: 10px solid rgba(255, 255, 255, .3);
+  z-index: 100;
   ul {
     list-style-type: none;
     margin-left: 0;
@@ -103,10 +118,10 @@ header {
 }
 
 footer {
-  background-color: $primary-color;
+  background-color: #658879;
   color: #F1F7ED;
-  padding-top:25px;
-  padding-bottom:25px;
+  padding-top:5px;
+  padding-bottom:5px;
   margin:0;
   text-align: center;
 }
@@ -124,7 +139,8 @@ CLASS styles
 .banner-heading {
   background-color: #ffe36a;
   color: $primary-color;
-  padding: 50px 0;
+  padding-bottom: 50px;
+  padding-top: 300px;
   margin:0 auto;
   text-align: center;
 }
@@ -181,7 +197,11 @@ CLASS styles
   transform: rotate(1turn);
 }
 
-
+.intro-wrapper {
+  background-color: $secondary-color;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 .intro {
   width: 90%;
@@ -189,7 +209,7 @@ CLASS styles
   text-align: left;
   margin:0 auto;
   color: $primary-color;
-  font-size: 1.2em;
+  font-size: 1.3em;
   line-height: 1.2;
   p::first-letter {
     float:left;
@@ -217,18 +237,30 @@ CLASS styles
   max-width: 735px;
 }
 
+.in-person,
+.online,
+.any-xp-lvl {
+  p {
+    background-color: $primary-color-light;
+    color: $secondary-color-dark;
+  }
+}
+
 .in-person {
   display:flex;
   align-items: center;
-  padding:0px 0 28px;
+  padding:0 0 30px 0px;
   img {
     width: 40%;
     padding-right: 15px;
   }
   p {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     width: 60%;
+    border: 3px solid $secondary-color;
+    border-radius: 10px;
+    padding: 20px;
   }
 }
 
@@ -242,10 +274,13 @@ CLASS styles
     order: 2;
   }
   p {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     width: 60%;
     order: -1;
+    border: 3px solid $secondary-color;
+    border-radius: 10px;
+    padding: 20px;
   }
 }
 
@@ -258,27 +293,33 @@ CLASS styles
     padding-right: 15px;
   }
   p {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     width: 60%;
+    border: 3px solid $secondary-color;
+    border-radius: 10px;
+    padding: 20px;
   }
 }
 
 .heading-in-person-lrg,
 .heading-online-lrg,
 .heading-xp-lvl-lrg {
-  display: inline;
+  display: none;
 }
 
 .top-link {
   text-align:center;
   margin:0 auto;
-  font-size: .95em;
+  font-size: 1.2em;
+  background-color: $secondary-color;
+  margin-bottom: 75px;
+
   a {
     color: $primary-color;
     display:block;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     &:hover {
       background-color: $white;
     }
@@ -362,17 +403,34 @@ CLASS styles
       order:2;
       font-size:1.3em;
       margin-top:0;
+      background-color: $primary-color-light;
+      color: $secondary-color-dark;
     }
     img {
       order: -1;
-      max-width: 300px;
-      max-height: 300px;
+      max-width: 175px;
+      max-height: 175px;
     }
   }
 
   .in-person img {
     margin-top:25px;
-    margin-bottom: 45px;
+    margin-bottom: 22.5px;
+  }
+
+  .top-link {
+    font-size: 1.5em;
+    background-color: $secondary-color;
+    width: pc-to-px(25, 1380px);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    a {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-radius: 10px;
+
+    }
   }
 
 
@@ -390,25 +448,12 @@ CLASS styles
   .service-flex-contain {
     flex-direction:row;
     padding-top: 50px;
+    max-width: 2500px;
   }
 
-  // .heading-in-person {
-  //   position: absolute;
-  //   top: -30px;
-  //   left: 40px;
-  // }
-  //
-  // .heading-online {
-  //   position:absolute;
-  //   top:-30px;
-  //   left: 455px;
-  // }
-  //
-  // .heading-xp-lvl {
-  //   position:absolute;
-  //   top: -30px;
-  //   right: 40px;
-  // }
+  .intro {
+    max-width: 1000px;
+  }
 
   .heading-in-person,
   .heading-online,
@@ -423,15 +468,16 @@ CLASS styles
     order: -2;
   }
 
-
-
-
   .in-person,
   .online,
   .any-xp-lvl {
     flex: 1 33.33%;
     p {
       width: 90%;
+    }
+    img {
+      width: 175px;
+      height: 175px;
     }
   }
 
@@ -440,4 +486,17 @@ CLASS styles
     margin-bottom: 0;
   }
 
+
+  .border-line {
+    border-bottom: none;
+    border-right: 1px solid $secondary-color;
+  }
+
+  .borderline:last-child {
+    border: none;
+  }
+
+  .top-link {
+    width: 500px;
+  }
 }

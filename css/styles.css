@@ -7,7 +7,7 @@ BASE styles
   box-sizing: border-box; }
 
 body {
-  background-color: #ffe36a;
+  background-color: #22553F;
   margin-top: 0; }
 
 h1,
@@ -18,7 +18,8 @@ h3 {
 h3 {
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  color: #ffe36a; }
 
 p {
   font-family: "Spectral", serif; }
@@ -32,7 +33,12 @@ a {
 nav {
   margin-top: 0;
   padding-top: 15px;
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+  position: fixed;
+  width: 100%;
+  background-color: #22553F;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.3);
+  z-index: 100; }
   nav ul {
     list-style-type: none;
     margin-left: 0;
@@ -59,10 +65,10 @@ header {
   margin-top: 0; }
 
 footer {
-  background-color: #22553F;
+  background-color: #658879;
   color: #F1F7ED;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin: 0;
   text-align: center; }
 
@@ -76,7 +82,8 @@ CLASS styles
 .banner-heading {
   background-color: #ffe36a;
   color: #22553F;
-  padding: 50px 0;
+  padding-bottom: 50px;
+  padding-top: 300px;
   margin: 0 auto;
   text-align: center; }
 
@@ -125,13 +132,18 @@ CLASS styles
 .d-spin:hover {
   transform: rotate(1turn); }
 
+.intro-wrapper {
+  background-color: #ffe36a;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
 .intro {
   width: 90%;
   max-width: 685px;
   text-align: left;
   margin: 0 auto;
   color: #22553F;
-  font-size: 1.2em;
+  font-size: 1.3em;
   line-height: 1.2; }
   .intro p::first-letter {
     float: left;
@@ -155,17 +167,26 @@ CLASS styles
   margin: 0 auto;
   max-width: 735px; }
 
+.in-person p,
+.online p,
+.any-xp-lvl p {
+  background-color: #28644a;
+  color: #ffe160; }
+
 .in-person {
   display: flex;
   align-items: center;
-  padding: 0px 0 28px; }
+  padding: 0 0 30px 0px; }
   .in-person img {
     width: 40%;
     padding-right: 15px; }
   .in-person p {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
-    width: 60%; }
+    width: 60%;
+    border: 3px solid #ffe36a;
+    border-radius: 10px;
+    padding: 20px; }
 
 .online {
   display: flex;
@@ -176,10 +197,13 @@ CLASS styles
     padding-left: 15px;
     order: 2; }
   .online p {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     width: 60%;
-    order: -1; }
+    order: -1;
+    border: 3px solid #ffe36a;
+    border-radius: 10px;
+    padding: 20px; }
 
 .any-xp-lvl {
   display: flex;
@@ -189,24 +213,29 @@ CLASS styles
     width: 40%;
     padding-right: 15px; }
   .any-xp-lvl p {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
-    width: 60%; }
+    width: 60%;
+    border: 3px solid #ffe36a;
+    border-radius: 10px;
+    padding: 20px; }
 
 .heading-in-person-lrg,
 .heading-online-lrg,
 .heading-xp-lvl-lrg {
-  display: inline; }
+  display: none; }
 
 .top-link {
   text-align: center;
   margin: 0 auto;
-  font-size: .95em; }
+  font-size: 1.2em;
+  background-color: #ffe36a;
+  margin-bottom: 75px; }
   .top-link a {
     color: #22553F;
     display: block;
-    padding-top: 15px;
-    padding-bottom: 15px; }
+    padding-top: 20px;
+    padding-bottom: 20px; }
     .top-link a:hover {
       background-color: #F1F7ED; }
     .top-link a:active {
@@ -274,17 +303,31 @@ CLASS styles
     .any-xp-lvl p {
       order: 2;
       font-size: 1.3em;
-      margin-top: 0; }
+      margin-top: 0;
+      background-color: #28644a;
+      color: #ffe160; }
     .in-person img,
     .online img,
     .any-xp-lvl img {
       order: -1;
-      max-width: 300px;
-      max-height: 300px; }
+      max-width: 175px;
+      max-height: 175px; }
 
   .in-person img {
     margin-top: 25px;
-    margin-bottom: 45px; }
+    margin-bottom: 22.5px; }
+
+  .top-link {
+    font-size: 1.5em;
+    background-color: #ffe36a;
+    width: 345px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px; }
+    .top-link a {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-radius: 10px; }
 
   /* CLEARFIX */
   .clearfix::after {
@@ -297,7 +340,11 @@ CLASS styles
 @media (min-width: 1024px) {
   .service-flex-contain {
     flex-direction: row;
-    padding-top: 50px; }
+    padding-top: 50px;
+    max-width: 2500px; }
+
+  .intro {
+    max-width: 1000px; }
 
   .heading-in-person,
   .heading-online,
@@ -318,9 +365,24 @@ CLASS styles
     .online p,
     .any-xp-lvl p {
       width: 90%; }
+    .in-person img,
+    .online img,
+    .any-xp-lvl img {
+      width: 175px;
+      height: 175px; }
 
   .in-person img {
     margin-top: 0;
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+
+  .border-line {
+    border-bottom: none;
+    border-right: 1px solid #ffe36a; }
+
+  .borderline:last-child {
+    border: none; }
+
+  .top-link {
+    width: 500px; } }
 
 /*# sourceMappingURL=styles.css.map */
