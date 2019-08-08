@@ -75,6 +75,9 @@ footer {
 /* =========================================
 CLASS styles
 ========================================== */
+.page-heading {
+  font-size: 3.5em; }
+
 .nav-heading {
   display: none;
   padding-left: 30px; }
