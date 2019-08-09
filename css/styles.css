@@ -38,7 +38,8 @@ nav {
   width: 100%;
   background-color: #22553F;
   border-bottom: 10px solid rgba(255, 255, 255, 0.3);
-  z-index: 100; }
+  z-index: 100;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
   nav ul {
     list-style-type: none;
     margin-left: 0;
@@ -73,10 +74,15 @@ footer {
   text-align: center; }
 
 /* =========================================
-CLASS styles
+CLASS STYLES
 ========================================== */
 .page-heading {
-  font-size: 3.5em; }
+  font-size: 3.5em;
+  margin: auto;
+  border-bottom: 4px solid #22553F;
+  width: 70%;
+  padding-bottom: 50px;
+  max-width: 800px; }
 
 .nav-heading {
   display: none;
@@ -107,6 +113,29 @@ CLASS styles
 .wrapper {
   min-height: calc(100vh - 18px); }
 
+.top-link {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+  background-color: #ffe36a;
+  margin-bottom: 75px;
+  margin-top: 75px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
+  .top-link a {
+    color: #22553F;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .top-link a:hover {
+      background-color: #F1F7ED; }
+    .top-link a:active {
+      background-color: #ffe36a;
+      color: #F1F7ED; }
+
+/* -------------------------------------------------
+HOMEPAGE
+---------------------------------------------------- */
 .dice-container {
   background: #22553F;
   padding-top: 25px;
@@ -174,7 +203,8 @@ CLASS styles
 .online p,
 .any-xp-lvl p {
   background-color: #28644a;
-  color: #ffe160; }
+  color: #ffe160;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
 
 .in-person {
   display: flex;
@@ -228,25 +258,81 @@ CLASS styles
 .heading-xp-lvl-lrg {
   display: none; }
 
-.top-link {
-  text-align: center;
-  margin: 0 auto;
-  font-size: 1.2em;
-  background-color: #ffe36a;
-  margin-bottom: 75px; }
-  .top-link a {
-    color: #22553F;
-    display: block;
-    padding-top: 20px;
-    padding-bottom: 20px; }
-    .top-link a:hover {
-      background-color: #F1F7ED; }
-    .top-link a:active {
-      background-color: #ffe36a;
-      color: #F1F7ED; }
-
 .border-line {
   border-bottom: 1px solid #ffe36a; }
+
+/* -------------------------------------------------
+ABOUT ME PAGE
+---------------------------------------------------- */
+.about-wrap {
+  background-color: #ffe36a;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
+
+.about-container {
+  padding-top: 15px;
+  padding-bottom: 200px; }
+
+.neil-img-container {
+  width: 350px;
+  margin: 0 auto;
+  position: relative; }
+
+.neil-img-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.neil-img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  border: 10px solid rgba(34, 85, 63, 0.85);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4); }
+
+.about-para {
+  color: #22553F;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 1.3em;
+  text-align: center;
+  max-width: 800px;
+  font-weight: 500; }
+
+.stat-card-flex-contain {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 850px;
+  height: 190px; }
+
+.stat-card {
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+  background-color: #22553F;
+  color: #ffe36a;
+  width: 20%;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  max-width: 300px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+  .stat-card ul {
+    list-style-type: none;
+    padding: 0; }
+    .stat-card ul li {
+      padding: 10px;
+      font-size: 1.4em; }
+  .stat-card p {
+    font-size: 1.7em; }
 
 /* Pseudo-Classes */
 /* MEDIA QUERIES */
@@ -261,7 +347,7 @@ CLASS styles
   .banner-heading {
     padding-top: 165px; }
 
-  ul {
+  nav ul {
     float: right;
     vertical-align: middle;
     padding-right: 15px; }
@@ -331,6 +417,28 @@ CLASS styles
       padding-top: 25px;
       padding-bottom: 25px;
       border-radius: 10px; }
+
+  #years-dmd,
+  #systems-dmd {
+    height: 120px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    min-width: 250px;
+    opacity: .7;
+    transition: opacity .3s .05s ease-in, height .8s .1s ease-in-out; }
+    #years-dmd h3,
+    #systems-dmd h3 {
+      margin-bottom: 0; }
+
+  #years-dmd:hover {
+    height: 190px;
+    left: 50px;
+    opacity: 1; }
+
+  #systems-dmd:hover {
+    right: 50px;
+    height: 316px;
+    opacity: 1; }
 
   /* CLEARFIX */
   .clearfix::after {

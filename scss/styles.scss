@@ -19,6 +19,7 @@ $white: #F1F7ED;
 $heading-font: 'Rubik', sans-serif;
 $body-font: 'Spectral', serif;
 
+
 // =========================================
 // MIXINS
 //==========================================
@@ -26,6 +27,10 @@ $body-font: 'Spectral', serif;
 @mixin center {
   width: 90%;
   margin:0 auto;
+}
+
+@mixin b-shad {
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 // =========================================
@@ -85,6 +90,7 @@ nav {
   background-color: $primary-color;
   border-bottom: 10px solid rgba(255, 255, 255, .3);
   z-index: 100;
+  @include b-shad;
   ul {
     list-style-type: none;
     margin-left: 0;
@@ -127,11 +133,16 @@ footer {
 }
 
 /* =========================================
-CLASS styles
+CLASS STYLES
 ========================================== */
 
 .page-heading {
   font-size: 3.5em;
+  margin: auto;
+  border-bottom: 4px solid $primary-color;
+  width: 70%;
+  padding-bottom: 50px;
+  max-width: 800px;
 }
 
 .nav-heading {
@@ -168,6 +179,34 @@ CLASS styles
   // background-color: $secondary-color;
 }
 
+
+.top-link {
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+  background-color: $secondary-color;
+  margin-bottom: 75px;
+  margin-top:75px;
+  @include b-shad;
+  a {
+    color: $primary-color;
+    display:block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    &:hover {
+      background-color: $white;
+    }
+    &:active {
+      background-color: $secondary-color;
+      color:$white;
+    }
+  }
+}
+
+/* -------------------------------------------------
+HOMEPAGE
+---------------------------------------------------- */
 .dice-container {
   background: $primary-color;
   padding-top: 25px;
@@ -247,6 +286,7 @@ CLASS styles
   p {
     background-color: $primary-color-light;
     color: $secondary-color-dark;
+    @include b-shad;
   }
 }
 
@@ -312,32 +352,100 @@ CLASS styles
   display: none;
 }
 
-.top-link {
-  text-align:center;
-  margin:0 auto;
-  font-size: 1.2em;
-  background-color: $secondary-color;
-  margin-bottom: 75px;
+.border-line {
+  border-bottom: 1px solid $secondary-color;
+}
 
-  a {
-    color: $primary-color;
-    display:block;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    &:hover {
-      background-color: $white;
+/* -------------------------------------------------
+ABOUT ME PAGE
+---------------------------------------------------- */
+
+.about-wrap {
+  background-color: $secondary-color;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.about-container {
+  padding-top: 15px;
+  padding-bottom: 200px;
+
+}
+
+.neil-img-container {
+  width: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.neil-img-overlay {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.neil-img {
+  width:100%;
+  border-radius: 10px;
+  display: block;
+  border: 10px solid rgba($primary-color, .85);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.about-para {
+  color: $primary-color;
+  @include center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 1.3em;
+  text-align: center;
+  max-width: 800px;
+  font-weight: 500;
+}
+
+.stat-card-flex-contain {
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 850px;
+  height: 190px;
+
+}
+
+.stat-card {
+  @include b-shad;
+  background-color:$primary-color;
+  color: $secondary-color;
+  width:20%;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  max-width: 300px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  ul {
+    list-style-type: none;
+    padding:0;
+    li {
+      padding:10px;
+      font-size: 1.4em;
     }
-    &:active {
-      background-color: $secondary-color;
-      color:$white;
-    }
+  }
+  p {
+    font-size: 1.7em;
   }
 }
 
 
-.border-line {
-  border-bottom: 1px solid $secondary-color;
-}
+
+
 /* Pseudo-Classes */
 
 /* MEDIA QUERIES */
@@ -356,7 +464,7 @@ CLASS styles
     padding-top: 165px;
   }
 
-  ul {
+  nav ul {
     float:right;
     vertical-align: middle;
     padding-right: 15px;
@@ -436,6 +544,36 @@ CLASS styles
 
     }
   }
+
+
+#years-dmd,
+#systems-dmd {
+    height: 120px;
+    overflow: hidden;
+    margin-bottom:50px;
+    min-width: 250px;
+    opacity: .7;
+    transition: opacity .3s .05s ease-in,
+                height .8s .1s ease-in-out;
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+
+#years-dmd:hover {
+  height: 190px;
+  left: 50px;
+  opacity: 1;
+
+}
+
+#systems-dmd:hover {
+  right: 50px;
+  height: 316px;
+  opacity: 1;
+}
+
 
 
   /* CLEARFIX */
