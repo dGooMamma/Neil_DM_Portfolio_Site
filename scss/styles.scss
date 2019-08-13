@@ -379,6 +379,9 @@ ABOUT ME PAGE
   text-align: center;
   max-width: 800px;
   font-weight: 500;
+  @include mq('lg') { // MQ - LARGE -----------------
+    padding-top: 0px;
+  }
 }
 
 .stat-card-flex-contain {
