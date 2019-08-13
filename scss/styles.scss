@@ -1,136 +1,16 @@
+// =================
+// PARTIAL IMPORTS
+// =================
 
-// =========================================
-// VARIABLES
-//==========================================
+// UTILITIES
+@import 'utility/_variables.scss',
+        'utility/_mixins.scss',
+        'utility/_functions.scss';
 
-/* COLORS */
-
-$primary-color: #22553F;
-$primary-color-dark: darken($primary-color, 7%);
-$primary-color-light: lighten($primary-color, 4%);
-
-$secondary-color: #ffe36a;
-$secondary-color-dark: darken($secondary-color, 2%);
-
-$white: #F1F7ED;
-
-/* FONTS */
-
-$heading-font: 'Rubik', sans-serif;
-$body-font: 'Spectral', serif;
+// BASE STYLES
+@import 'base/_base-styles.scss';
 
 
-// =========================================
-// MIXINS
-//==========================================
-
-@mixin center {
-  width: 90%;
-  margin:0 auto;
-}
-
-@mixin b-shad {
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
-}
-
-// =========================================
-// FUNCTIONS
-//==========================================
-
-@function pc-to-px($target, $context) {
-  @return ($target * .01) * $context;
-}
-
-
-/* =========================================
-BASE styles
-========================================== */
-
-* {
-  box-sizing:border-box;
-}
-
-body {
-  background-color: $primary-color;
-  margin-top:0;
-}
-
-h1,
-h2,
-h3 {
-  font-family: $heading-font;
-}
-
-h3 {
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 1.8em;
-  color: $secondary-color;
-}
-
-p {
-  font-family: $body-font;
-}
-
-a {
-  text-decoration: none;
-  margin-top:0;
-  &:link,
-  &:visited {
-    color: $white;
-  }
-}
-
-nav {
-  margin-top: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  position: fixed;
-  width:100%;
-  background-color: $primary-color;
-  border-bottom: 10px solid rgba(255, 255, 255, .3);
-  z-index: 100;
-  @include b-shad;
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left:0;
-    font-family: $heading-font;
-    text-transform: uppercase;
-    li {
-      text-align: center;
-      a {
-        padding-top:10px;
-        padding-bottom:10px;
-        display: block;
-        letter-spacing: .22rem;
-        font-size: 1.3rem;
-        &:hover {
-          background-color: $white;
-          color: $primary-color;
-          &:active {
-            background-color: $secondary-color;
-            color: $white;
-          }
-        }
-      }
-    }
-  }
-}
-
-header {
-  background-color: $primary-color;
-  margin-top:0;
-}
-
-footer {
-  background-color: #658879;
-  color: #F1F7ED;
-  padding-top:5px;
-  padding-bottom:5px;
-  margin:0;
-  text-align: center;
-}
 
 /* =========================================
 CLASS STYLES
@@ -146,9 +26,17 @@ CLASS STYLES
 }
 
 .nav-heading {
-  // margin-top:0;
   display:none;
   padding-left:30px;
+  @include mq('med') { // MQ - MEDIUM ------------
+    display:inline-block;
+    float: left;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: 500;
+    margin-top:8px;
+    margin-bottom:0px;
+  }
 }
 
 .banner-heading {
@@ -158,6 +46,9 @@ CLASS STYLES
   padding-top: 300px;
   margin:0 auto;
   text-align: center;
+  @include mq('med') { // MQ - MEDIUM ------------
+    padding-top: 165px;
+  }
 }
 
 .banner-title {
@@ -176,7 +67,6 @@ CLASS STYLES
 
 .wrapper {
   min-height: calc(100vh - 18px);
-  // background-color: $secondary-color;
 }
 
 
@@ -189,6 +79,22 @@ CLASS STYLES
   margin-bottom: 75px;
   margin-top:75px;
   @include b-shad;
+  @include mq('med') { // MQ - MEDIUM ------------
+    font-size: 1.5em;
+    background-color: $secondary-color;
+    width: pc-to-px(25, 1380px);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    a {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-radius: 10px;
+    }
+  }
+  @include mq('lg') { // MQ - LARGE ------------
+    width: 500px;
+  }
   a {
     color: $primary-color;
     display:block;
@@ -203,7 +109,7 @@ CLASS STYLES
       color:$white;
     }
   }
-}
+} // END OF .top-link --------------------------
 
 /* -------------------------------------------------
 HOMEPAGE
@@ -255,6 +161,12 @@ HOMEPAGE
   color: $primary-color;
   font-size: 1.3em;
   line-height: 1.2;
+  @include mq('med') { // MQ - MEDIUM ------------
+    font-size: 1.5em;
+  }
+  @include mq('lg') { // MQ - LARGE ------------
+    max-width: 1000px;
+  }
   p::first-letter {
     float:left;
     font-size: 80px;
@@ -279,17 +191,53 @@ HOMEPAGE
   text-align: center;
   margin:0 auto;
   max-width: 735px;
+  @include mq('med') { // MQ - MEDIUM ------------
+    display:flex;
+    flex-direction: column;
+    max-width: 1000px;
+    position: relative;
+  }
+  @include mq('lg') { // MQ - LARGE ------------
+    flex-direction:row;
+    padding-top: 50px;
+    max-width: 2500px;
+  }
 }
 
 .in-person,
 .online,
 .any-xp-lvl {
+  @include mq('med') { // MQ - MEDIUM ------------
+    flex-direction:column;
+    p {
+      order:2;
+      font-size:1.3em;
+      margin-top:0;
+      background-color: $primary-color-light;
+      color: $secondary-color-dark;
+    }
+    img {
+      order: -1;
+      max-width: 175px;
+      max-height: 175px;
+    }
+  }
+  @include mq('lg') { // MQ - LARGE ------------
+    flex: 1 33.33%;
+    p {
+      width: 90%;
+    }
+    img {
+      width: 175px;
+      height: 175px;
+    }
+  }
   p {
     background-color: $primary-color-light;
     color: $secondary-color-dark;
     @include b-shad;
   }
-}
+} // END .in-person, .online, .any-xp-lvl --------
 
 .in-person {
   display:flex;
@@ -298,6 +246,14 @@ HOMEPAGE
   img {
     width: 40%;
     padding-right: 15px;
+    @include mq('med') { // MQ - MEDIUM ------------
+      margin-top:25px;
+      margin-bottom: 22.5px;
+    }
+    @include mq('lg') { // MQ - LARGE ------------
+      margin-top:0;
+      margin-bottom: 0;
+    }
   }
   p {
     font-size: 1.2em;
@@ -351,10 +307,21 @@ HOMEPAGE
 .heading-online-lrg,
 .heading-xp-lvl-lrg {
   display: none;
+  @include mq('lg') { // MQ - LARGE ------------
+    display: inline;
+    order: -2;
+  }
 }
 
 .border-line {
   border-bottom: 1px solid $secondary-color;
+  @include mq('lg') { // MQ - LARGE ------------
+    border-bottom: none;
+    border-right: 1px solid $secondary-color;
+    .borderline:last-child {
+      border: none;
+    }
+  }
 }
 
 /* -------------------------------------------------
@@ -370,6 +337,9 @@ ABOUT ME PAGE
 .about-container {
   padding-top: 15px;
   padding-bottom: 50px;
+  @include mq('med') { // MQ - MEDIUM ------------
+    padding-bottom: 200px;
+  }
 }
 
 .neil-img-container {
@@ -377,6 +347,11 @@ ABOUT ME PAGE
   margin: 0 auto;
   position: relative;
   width: 75%;
+  @include mq('med') { // MQ - MEDIUM ------------
+    float: left;
+    margin-left:50px;
+    padding-right: 20px;
+  }
 }
 
 .neil-img-overlay {
@@ -413,157 +388,7 @@ ABOUT ME PAGE
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-}
-
-
-
-.stat-card {
-  @include b-shad;
-  background-color:$primary-color;
-  color: $secondary-color;
-  width:70%;
-  border-radius: 10px;
-  max-width: 350px;
-  padding-bottom: 15px;
-  display: flex;
-  flex-direction:column;
-  justify-content: flex-start;
-  margin: 35px auto;
-  ul {
-    list-style-type: none;
-    padding:0;
-    li {
-      padding:10px;
-      font-size: 1.4em;
-    }
-  }
-  p {
-    font-size: 1.7em;
-  }
-}
-
-
-
-
-/* Pseudo-Classes */
-
-/* MEDIA QUERIES */
-
-@media (min-width:769px) {
-
-  nav {
-    position: fixed;
-    width:100%;
-    background-color: $primary-color;
-    border-bottom: 10px solid rgba(255, 255, 255, .3);
-    z-index: 100;
-  }
-
-  .banner-heading {
-    padding-top: 165px;
-  }
-
-  nav ul {
-    float:right;
-    vertical-align: middle;
-    padding-right: 15px;
-  }
-
-  nav ul li {
-    display:inline-block;
-    padding-left:5px;
-    padding-right:5px;
-  }
-
-  nav ul li a {
-    padding-left:10px;
-    padding-right:10px;
-    font-size: 1.2em;
-    &:hover {
-      background-color: transparent;
-      color:$secondary-color;
-      &:active {
-        background-color: rgba($primary-color,0);
-      }
-    }
-  }
-
-  .nav-heading {
-    display:inline-block;
-    float: left;
-    vertical-align: middle;
-    font-size: 3em;
-    font-weight: 500;
-    margin-top:8px;
-    margin-bottom:0px;
-  }
-
-  .intro {
-    font-size: 1.5em;
-  }
-
-  .service-flex-contain {
-    display:flex;
-    flex-direction: column;
-    max-width: 1000px;
-    position: relative;
-  }
-
-  .in-person,
-  .online,
-  .any-xp-lvl {
-    flex-direction:column;
-    p {
-      order:2;
-      font-size:1.3em;
-      margin-top:0;
-      background-color: $primary-color-light;
-      color: $secondary-color-dark;
-    }
-    img {
-      order: -1;
-      max-width: 175px;
-      max-height: 175px;
-    }
-  }
-
-  .in-person img {
-    margin-top:25px;
-    margin-bottom: 22.5px;
-  }
-
-  .top-link {
-    font-size: 1.5em;
-    background-color: $secondary-color;
-    width: pc-to-px(25, 1380px);
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 10px;
-    a {
-      padding-top: 25px;
-      padding-bottom: 25px;
-      border-radius: 10px;
-
-    }
-  }
-
-  .about-container {
-    padding-bottom: 200px;
-  }
-
-  .neil-img-container {
-    float: left;
-    margin-left:50px;
-    padding-right: 20px;
-  }
-
-  .pic-para-float {
-    width: 75%;
-    margin:0 auto;
-    max-width: 900px;
-  }
-
-  .stat-card-flex-contain {
+  @include mq('med') { // MQ - MEDIUM ------------
     margin-left: auto;
     margin-right: auto;
     width:100%;
@@ -575,8 +400,23 @@ ABOUT ME PAGE
     max-width: 850px;
     height: 190px;
   }
+}
 
-  .stat-card {
+
+
+.stat-card { // BEGIN STAT CARD -----------------------
+  @include b-shad;
+  background-color:$primary-color;
+  color: $secondary-color;
+  width:70%;
+  border-radius: 10px;
+  max-width: 350px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  margin: 35px auto;
+  @include mq('med') {  // MQ - MEDIUM ------------
     @include b-shad;
     background-color:$primary-color;
     color: $secondary-color;
@@ -596,12 +436,34 @@ ABOUT ME PAGE
         padding:10px;
         font-size: 1.4em;
       }
-    }
+    } // END MQ ------------------------------------
     p {
       font-size: 1.7em;
     }
   }
+  ul {
+    list-style-type: none;
+    padding:0;
+    li {
+      padding:10px;
+      font-size: 1.4em;
+    }
+  }
+  p {
+    font-size: 1.7em;
+  }
+} // END STAT CARD --------------------------------
 
+
+/* MEDIA QUERIES */
+
+@media (min-width:$break-m) {
+
+  .pic-para-float {
+    width: 75%;
+    margin:0 auto;
+    max-width: 900px;
+  }
 
 #years-dmd,
 #systems-dmd {
@@ -642,17 +504,7 @@ ABOUT ME PAGE
 }
 }
 
-@media (min-width:1024px) {
-
-  .service-flex-contain {
-    flex-direction:row;
-    padding-top: 50px;
-    max-width: 2500px;
-  }
-
-  .intro {
-    max-width: 1000px;
-  }
+@media (min-width:$break-l) {
 
   .heading-in-person,
   .heading-online,
@@ -660,42 +512,4 @@ ABOUT ME PAGE
     display: none;
   }
 
-  .heading-in-person-lrg,
-  .heading-online-lrg,
-  .heading-xp-lvl-lrg {
-    display: inline;
-    order: -2;
-  }
-
-  .in-person,
-  .online,
-  .any-xp-lvl {
-    flex: 1 33.33%;
-    p {
-      width: 90%;
-    }
-    img {
-      width: 175px;
-      height: 175px;
-    }
-  }
-
-  .in-person img {
-    margin-top:0;
-    margin-bottom: 0;
-  }
-
-
-  .border-line {
-    border-bottom: none;
-    border-right: 1px solid $secondary-color;
-  }
-
-  .borderline:last-child {
-    border: none;
-  }
-
-  .top-link {
-    width: 500px;
-  }
 }
