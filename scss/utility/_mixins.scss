@@ -19,7 +19,7 @@
     }
   }
 
-  @else $break == 'lg' {
+  @else if $break == 'lg' {
     @media (min-width: $break-l) {
       @content;
     }
