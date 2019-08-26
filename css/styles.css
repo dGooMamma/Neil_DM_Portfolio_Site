@@ -66,22 +66,22 @@ nav {
         display: block;
         letter-spacing: .22rem;
         font-size: 1.3rem; }
-        @media (min-width: 769px) {
-          nav ul li a {
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 1.2em; }
-            nav ul li a:hover {
-              background-color: transparent;
-              color: #ffe36a; }
-              nav ul li a:hover:active {
-                background-color: rgba(34, 85, 63, 0); } }
         nav ul li a:hover {
           background-color: #F1F7ED;
           color: #22553F; }
           nav ul li a:hover:active {
             background-color: #ffe36a;
             color: #F1F7ED; }
+        @media (min-width: 769px) {
+          nav ul li a {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 1.2em; }
+            nav ul li a:hover {
+              background-color: rgba(34, 85, 63, 0);
+              color: #ffe36a; }
+              nav ul li a:hover:active {
+                background-color: rgba(34, 85, 63, 0); } }
 
 header {
   background-color: #22553F;
@@ -496,6 +496,23 @@ ABOUT ME PAGE
       font-size: 1.4em; }
   .stat-card p {
     font-size: 1.7em; }
+
+/* -------------------------------------------------
+CONTACT PAGE
+---------------------------------------------------- */
+.contact-container {
+  background-color: #ffe36a;
+  margin-top: 0; }
+  .contact-container .contact-info {
+    background-color: #22553F;
+    width: 90%;
+    width: 90%;
+    margin: 0 auto; }
+    .contact-container .contact-info .contact-info-list {
+      color: #ffe36a;
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 0; }
 
 /* MEDIA QUERIES */
 @media (min-width: 769px) {

@@ -78,18 +78,6 @@ nav {
         display: block;
         letter-spacing: .22rem;
         font-size: 1.3rem;
-        @include mq('med') {
-          padding-left:10px;
-          padding-right:10px;
-          font-size: 1.2em;
-          &:hover {
-            background-color: transparent;
-            color:$secondary-color;
-            &:active {
-              background-color: rgba($primary-color,0);
-            }
-          }
-        }
         &:hover {
           background-color: $white;
           color: $primary-color;
@@ -98,6 +86,19 @@ nav {
             color: $white;
           }
         }
+        @include mq('med') {
+          padding-left:10px;
+          padding-right:10px;
+          font-size: 1.2em;
+          &:hover {
+            background-color: rgba($primary-color,0);
+            color:$secondary-color;
+            &:active {
+              background-color: rgba($primary-color,0);
+            }
+          }
+        }
+
       }
     }
   }

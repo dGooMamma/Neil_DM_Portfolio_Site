@@ -1,3 +1,4 @@
+
 // =================
 // PARTIAL IMPORTS
 // =================
@@ -459,6 +460,25 @@ ABOUT ME PAGE
   }
 } // END STAT CARD --------------------------------
 
+/* -------------------------------------------------
+CONTACT PAGE
+---------------------------------------------------- */
+
+.contact-container {
+  background-color: $secondary-color;
+  margin-top:0;
+  .contact-info {
+    background-color: $primary-color;
+    width: 90%;
+    @include center;
+    .contact-info-list {
+      color: $secondary-color;
+      list-style-type: none;
+      padding-left: 0;
+      margin-top:0;
+    }
+  }
+}
 
 /* MEDIA QUERIES */
 
