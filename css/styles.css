@@ -502,17 +502,73 @@ CONTACT PAGE
 ---------------------------------------------------- */
 .contact-container {
   background-color: #ffe36a;
-  margin-top: 0; }
+  margin-top: 0;
+  text-align: center;
+  padding-bottom: 25px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
   .contact-container .contact-info {
     background-color: #22553F;
-    width: 90%;
-    width: 90%;
-    margin: 0 auto; }
+    width: 100%;
+    margin-bottom: 100px;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
+    @media (min-width: 769px) {
+      .contact-container .contact-info {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        border-radius: 10px; } }
     .contact-container .contact-info .contact-info-list {
       color: #ffe36a;
       list-style-type: none;
       padding-left: 0;
-      margin-top: 0; }
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0px;
+      border: 3px solid #ffe36a;
+      border-radius: 10px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      width: 40%;
+      min-width: 350px;
+      max-width: 550px;
+      transform: translateY(50px);
+      box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
+      .contact-container .contact-info .contact-info-list li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: "Rubik", sans-serif;
+        letter-spacing: .2em;
+        font-size: 1.4em; }
+        .contact-container .contact-info .contact-info-list li a {
+          color: #ffe36a;
+          text-decoration: underline; }
+          .contact-container .contact-info .contact-info-list li a:hover {
+            color: #F1F7ED; }
+
+#g-map {
+  width: 90%;
+  max-width: 900px;
+  height: 300px;
+  margin: 75px auto 50px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100px;
+  width: 40%;
+  min-width: 300px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto; }
+  .social-icons a {
+    width: 50px;
+    height: 50px; }
+    .social-icons a:hover {
+      opacity: .8;
+      color: #F1F7ED; }
 
 /* MEDIA QUERIES */
 @media (min-width: 769px) {
