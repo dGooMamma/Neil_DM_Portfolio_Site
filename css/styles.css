@@ -83,6 +83,11 @@ nav {
               nav ul li a:hover:active {
                 background-color: rgba(34, 85, 63, 0); } }
 
+hr {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: none; }
+
 header {
   background-color: #22553F;
   margin-top: 0; }
@@ -518,6 +523,7 @@ CONTACT PAGE
         width: 60%;
         border-radius: 10px; } }
     .contact-container .contact-info .contact-info-list {
+      background-color: rgba(241, 247, 237, 0.05);
       color: #ffe36a;
       list-style-type: none;
       padding-left: 0;
@@ -571,6 +577,35 @@ CONTACT PAGE
     .social-icons a:hover {
       opacity: .6;
       color: #F1F7ED; }
+
+/* -------------------------------------------------
+BLOG PAGE
+---------------------------------------------------- */
+.date {
+  margin-top: 0;
+  padding-top: 50px;
+  color: #ffe36a; }
+
+.post-heading {
+  color: #F1F7ED;
+  font-size: 4em; }
+
+.post-pic {
+  width: 90%;
+  max-width: 640px;
+  border: 5px solid rgba(241, 247, 237, 0.5);
+  border-radius: 5px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
+
+.post-body {
+  color: #F1F7ED;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: 1.2;
+  padding-top: 25px;
+  text-align: left;
+  text-indent: 50px; }
 
 /* MEDIA QUERIES */
 @media (min-width: 769px) {
