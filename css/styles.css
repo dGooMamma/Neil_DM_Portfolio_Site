@@ -541,7 +541,8 @@ CONTACT PAGE
         font-size: 1.4em; }
         .contact-container .contact-info .contact-info-list li a {
           color: #ffe36a;
-          text-decoration: underline; }
+          text-decoration: underline;
+          transition: color .3s ease-out; }
           .contact-container .contact-info .contact-info-list li a:hover {
             color: #F1F7ED; }
 
@@ -565,9 +566,10 @@ CONTACT PAGE
   margin-right: auto; }
   .social-icons a {
     width: 50px;
-    height: 50px; }
+    height: 50px;
+    transition: opacity .3s ease-out; }
     .social-icons a:hover {
-      opacity: .8;
+      opacity: .6;
       color: #F1F7ED; }
 
 /* MEDIA QUERIES */
