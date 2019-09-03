@@ -549,6 +549,21 @@ CONTACT PAGE
   }
 }
 
+.form-flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  .form-element {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+
 /* -------------------------------------------------
 BLOG PAGE
 ---------------------------------------------------- */

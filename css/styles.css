@@ -578,6 +578,18 @@ CONTACT PAGE
       opacity: .6;
       color: #F1F7ED; }
 
+.form-flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto; }
+  .form-flex-container .form-element {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+
 /* -------------------------------------------------
 BLOG PAGE
 ---------------------------------------------------- */
