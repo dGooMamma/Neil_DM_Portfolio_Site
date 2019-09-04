@@ -3,11 +3,13 @@
 
 body {
   background-color: #22553F;
-  margin-top: 0; }
+  margin-top: 0;
+  margin-right: 0; }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Rubik", sans-serif; }
 
 h3 {
@@ -15,6 +17,11 @@ h3 {
   text-transform: uppercase;
   font-size: 1.8em;
   color: #ffe36a; }
+
+h4 {
+  letter-spacing: .07em;
+  font-size: 1.5em;
+  color: #22553F; }
 
 p {
   font-family: "Spectral", serif; }
@@ -91,6 +98,52 @@ hr {
 header {
   background-color: #22553F;
   margin-top: 0; }
+
+form {
+  margin-bottom: 100px; }
+
+input[type="text"],
+input[type="Email"] {
+  height: 50px;
+  font-size: 1.3em;
+  border-radius: 5px;
+  border: none;
+  text-indent: 15px;
+  margin-top: 10px;
+  background-color: lightyellow; }
+  @media (min-width: 769px) {
+    input[type="text"],
+    input[type="Email"] {
+      width: 70%; } }
+  input[type="text"]:focus,
+  input[type="Email"]:focus {
+    background-color: #ffffff;
+    outline: 0;
+    border: 3px solid rgba(34, 85, 63, 0.8); }
+
+button[type="button"] {
+  width: 25%;
+  height: 50px;
+  margin-top: 60px;
+  border-radius: 10px;
+  background-color: #22553F;
+  border: none;
+  color: #ffe36a;
+  font-size: 1.3em;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  transition: opacity .3s ease-out, transform .2;
+  min-width: 100px; }
+  button[type="button"]:focus {
+    outline: 0; }
+  button[type="button"]:hover {
+    cursor: pointer;
+    opacity: .87; }
+  button[type="button"]:active {
+    background-color: #ffe36a;
+    color: #22553F;
+    border: 3px solid #22553F;
+    transform: scale(0.95); }
 
 footer {
   background-color: #658879;
@@ -535,7 +588,7 @@ CONTACT PAGE
       padding-top: 25px;
       padding-bottom: 25px;
       width: 40%;
-      min-width: 350px;
+      min-width: 300px;
       max-width: 550px;
       transform: translateY(50px);
       box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); }
@@ -544,7 +597,7 @@ CONTACT PAGE
         padding-bottom: 10px;
         font-family: "Rubik", sans-serif;
         letter-spacing: .2em;
-        font-size: 1.4em; }
+        font-size: 1.3em; }
         .contact-container .contact-info .contact-info-list li a {
           color: #ffe36a;
           text-decoration: underline;
@@ -581,14 +634,39 @@ CONTACT PAGE
 .form-flex-container {
   display: flex;
   flex-direction: column;
-  height: 300px;
-  width: 40%;
+  height: 400px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto; }
+  @media (min-width: 769px) {
+    .form-flex-container {
+      width: 60%; } }
+  @media (min-width: 1024px) {
+    .form-flex-container {
+      max-width: 620px; } }
   .form-flex-container .form-element {
     display: flex;
     flex-direction: column;
-    flex: 1; }
+    flex: 1;
+    margin-top: 25px; }
+    @media (min-width: 769px) {
+      .form-flex-container .form-element {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; } }
+    .form-flex-container .form-element label {
+      text-align: left;
+      color: #22553F;
+      font-size: 1.3em;
+      font-weight: 700; }
+      @media (min-width: 769px) {
+        .form-flex-container .form-element label {
+          padding-right: 20px;
+          max-width: 120px; } }
+      @media (min-width: 1024px) {
+        .form-flex-container .form-element label {
+          padding-right: 20px;
+          max-width: 160px; } }
 
 /* -------------------------------------------------
 BLOG PAGE
